@@ -47,7 +47,7 @@ $resultSet = $stmt->fetchAll();
 foreach ($resultSet as $row) {
 	echo $row['id'];
         echo $row['name'];
-        echo '\n';
+        echo "\n";
 }
 
 ?>
