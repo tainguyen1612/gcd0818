@@ -9,15 +9,6 @@
  ?> 
     
 <?php
-$txt1 = "Learn PHP";
-$txt2 = "FPT Greenwich";
-$x = 5;
-$y = 5;
-
-echo "<h2>" . $txt1 . "</h2>";
-echo "Study PHP at " . $txt2 . "<br>";
-echo $x + $y;
-
 
 
 if (empty(getenv("DATABASE_URL"))){
@@ -47,7 +38,7 @@ $resultSet = $stmt->fetchAll();
 foreach ($resultSet as $row) {
 	echo $row['id'];
         echo $row['name'];
-        echo "\n";
+        echo "<br>";
 }
 
 ?>
