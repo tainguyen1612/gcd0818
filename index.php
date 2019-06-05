@@ -24,6 +24,7 @@ if (empty(getenv("DATABASE_URL"))){
     echo '<p>Chua co CSDL</p>';
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
+     echo '<p>Da co CSDL</p>';
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
         "host=%s;port=%s;user=%s;password=%s;dbname=%s",
