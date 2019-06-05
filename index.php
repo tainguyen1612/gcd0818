@@ -16,7 +16,7 @@ if (empty(getenv("DATABASE_URL"))){
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
      echo '<p>Da co CSDL</p>';
-     //echo getenv("DATABASE_URL");
+     echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
         "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
@@ -34,7 +34,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
-
+echo '<p>Du lieu trong bang users:</p>';
 foreach ($resultSet as $row) {
 	echo $row['id'];
         echo $row['name'];
