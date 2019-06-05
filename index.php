@@ -4,7 +4,7 @@
  </head>
  <body>
  <?php echo '<p>Hello World from Netbeans</p>'; 
-    putenv("DATABASE_URL=fred");
+    putenv("DATABASE_URL=GR");
     echo getenv("DATABASE_URL")
  ?> 
      
