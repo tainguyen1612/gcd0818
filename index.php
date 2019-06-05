@@ -4,8 +4,8 @@
  </head>
  <body>
  <?php echo '<p>Hello World from Netbeans</p>'; 
-    putenv("DATABASE_URL=GR");
-    echo getenv("DATABASE_URL")
+   // putenv("DATABASE_URL=GR");
+   // echo getenv("DATABASE_URL")
  ?> 
     
 <?php
@@ -25,6 +25,7 @@ if (empty(getenv("DATABASE_URL"))){
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
      echo '<p>Da co CSDL</p>';
+     echo getenv("DATABASE_URL");
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
         "host=%s;port=%s;user=%s;password=%s;dbname=%s",
