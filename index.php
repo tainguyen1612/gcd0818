@@ -1,13 +1,14 @@
 <html>
  <head>
-  <title>PHP Test</title>
+  <title>Database Test</title>
  </head>
  <body>
  <?php echo '<p>Hello World from Netbeans</p>'; 
    // putenv("DATABASE_URL=GR");
    // echo getenv("DATABASE_URL")
+
  ?> 
-    
+    <a href="ConnectToDB" target="_blank" >Connect database</a> 
 <?php
 
 
