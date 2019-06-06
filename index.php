@@ -19,12 +19,14 @@ if (empty(getenv("DATABASE_URL"))){
      echo '<p>Da co CSDL</p>';
      echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
+   //        "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
    $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
-        $db["host"],
-        $db["port"],
-        $db["user"],
-        $db["pass"],
+
+        $db["ec2-174-129-240-67.compute-1.amazonaws.com"],
+        $db["5432"],
+        $db["wrflrxtavasvqh"],
+        $db["fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b"],
+        $db["d3mmhribgmc6bf"],   
         ltrim($db["path"], "/")
    ));
 }  
