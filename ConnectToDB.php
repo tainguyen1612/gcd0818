@@ -6,7 +6,7 @@
 
 <?php
 ini_set('display_errors', 1);
-echo "Read database!";
+echo "Hello Cloud computing class 0818!";
 ?>
 
 <?php

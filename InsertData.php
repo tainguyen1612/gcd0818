@@ -39,7 +39,7 @@ if (empty(getenv("DATABASE_URL"))){
 $sql = "INSERT INTO student (ID, name, email, class) 
     values ('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
 $stmt = $pdo->prepare($sql);
-$stmt->execute();
+//$stmt->execute();
 if($stmt->execute() == TRUE){
     echo "Record inserted successfully";
 } else {
