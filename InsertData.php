@@ -40,11 +40,11 @@ $sql = "INSERT INTO student (ID, name, email, class)
     values ('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-//if($pdo->query($sql) == TRUE){
-  //  echo "Record inserted successfully";
-//} else {
-//    echo "Error inderting record: " . $pdo->error;
-//}
+if($stmt->execute() == TRUE){
+    echo "Record inserted successfully";
+} else {
+    echo "Error inderting record: " . $pdo->error;
+}
 ?>
 </body>
 </html>
