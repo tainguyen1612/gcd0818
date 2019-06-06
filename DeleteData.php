@@ -33,7 +33,7 @@ $sql = "DELETE student WHERE ID = SV02";
 if($pdo->query($sql) == TRUE){
     echo "Record deleted successfully";
 } else {
-    echo "Error deleting record: " . $stmt->error;
+    echo "Error deleting record: " . $pdo->error;
 }
 
 ?>

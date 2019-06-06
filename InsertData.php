@@ -41,7 +41,7 @@ $sql = "INSERT INTO student (ID, name, email, class)
 if($pdo->query($sql) == TRUE){
     echo "Record inserted successfully";
 } else {
-    echo "Error inderting record: " . $stmt->error;
+    echo "Error inderting record: " . $pdo->error;
 }
 ?>
 </body>

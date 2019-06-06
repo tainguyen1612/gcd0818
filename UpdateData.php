@@ -32,7 +32,7 @@ $sql = "UPDATE student SET name = 'Lee' WHERE ID = SV02";
 if($pdo->query($sql) == TRUE){
     echo "Record updated successfully";
 } else {
-    echo "Error updating record: " . $stmt->error;
+    echo "Error updating record: " . $pdo->error;
 }
     
 ?>
