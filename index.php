@@ -8,7 +8,7 @@
    // echo getenv("DATABASE_URL")
 
  ?> 
-    <a href="https://cloud-netbean.herokuapp.com/ConnectToDB" target="_blank" >Connect database</a> 
+     <a href="ConnectToDB.php" target="_blank" >Connect database</a> 
 <?php
 
 
