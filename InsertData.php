@@ -43,7 +43,7 @@ $stmt->execute();
 if($stmt->execute() == TRUE){
     echo "Record inserted successfully";
 } else {
-    echo "Error inderting record: " . $pdo->error;
+    echo "Error inderting record: ";
 }
 ?>
 </body>
