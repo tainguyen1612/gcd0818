@@ -29,17 +29,21 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "SELECT id, name FROM users";
+$sql = "SELECT * FROM student";
 $stmt = $pdo->prepare($sql);
 //Thiết lập kiểu dữ liệu trả về
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
-echo '<p>Du lieu trong bang users:</p>';
+echo '<p>Students information:</p>';
 foreach ($resultSet as $row) {
-	echo $row['id'];
+	echo $row['ID'];
         echo "    ";
         echo $row['name'];
+        echo "    ";
+        echo $row['email'];
+        echo "    ";
+        echo $row['class'];
         echo "<br/>";
 }
 

@@ -28,14 +28,13 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-//Khởi tạo Prepared Statement
-$stmt = $db->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
-$stmt->bindParam(':ID',SV03);
-$stmt->bindParam(':name','Ho Hong Linh');
-$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
-$stmt->bindParam(':class', 'GCD018');
-$stmt->execute();
-
+$sql = "DELETE student WHERE ID = SV02";
+$stmt = $pdo->prepare($sql);
+if($stmt->query($sql) == TRUE){
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $stmt->error;
+}
 
 ?>
 </body>
