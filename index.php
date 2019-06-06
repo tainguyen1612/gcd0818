@@ -23,7 +23,7 @@ if (empty(getenv("DATABASE_URL"))){
    $dsn = 'pgsql:host=ec2-174-129-240-67.compute-1.amazonaws.com;'
            . 'dbname=d3mmhribgmc6bf;'
            . 'port = 5432;'
-           . 'user = wrflrxtavasvqh'
+           . 'user = wrflrxtavasvqh;'
            . 'password = fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b';
           
    $options = array(
