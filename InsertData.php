@@ -30,7 +30,7 @@ if (empty(getenv("DATABASE_URL"))){
 
 //Khởi tạo Prepared Statement
 $stmt = $db->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
-$stmt->bindParam(':ID',SV03);
+$stmt->bindParam(':ID','SV03');
 $stmt->bindParam(':name','Ho Hong Linh');
 $stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
 $stmt->bindParam(':class', 'GCD018');
