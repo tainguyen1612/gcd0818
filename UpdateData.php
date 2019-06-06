@@ -29,7 +29,6 @@ if (empty(getenv("DATABASE_URL"))){
 }  
 
 $sql = "UPDATE student SET name = 'Lee' WHERE ID = SV02";
-$stmt = $pdo->prepare($sql);
 if($stmt->query($sql) == TRUE){
     echo "Record updated successfully";
 } else {

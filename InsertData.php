@@ -29,14 +29,20 @@ if (empty(getenv("DATABASE_URL"))){
 }  
 
 //Khởi tạo Prepared Statement
-$stmt = $db->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
-$stmt->bindParam(':ID','SV03');
-$stmt->bindParam(':name','Ho Hong Linh');
-$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
-$stmt->bindParam(':class', 'GCD018');
-$stmt->execute();
+//$stmt = $db->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
 
-
+//$stmt->bindParam(':ID','SV03');
+//$stmt->bindParam(':name','Ho Hong Linh');
+//$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
+//$stmt->bindParam(':class', 'GCD018');
+//$stmt->execute();
+$sql = "INSERT INTO student (ID, name, email, class) 
+    values ('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
+if($stmt->query($sql) == TRUE){
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $stmt->error;
+}
 ?>
 </body>
 </html>
