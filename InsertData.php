@@ -38,10 +38,10 @@ if (empty(getenv("DATABASE_URL"))){
 //$stmt->execute();
 $sql = "INSERT INTO student (ID, name, email, class) 
     values ('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
-if($stmt->query($sql) == TRUE){
-    echo "Record updated successfully";
+if($pdo->query($sql) == TRUE){
+    echo "Record inserted successfully";
 } else {
-    echo "Error updating record: " . $stmt->error;
+    echo "Error inderting record: " . $stmt->error;
 }
 ?>
 </body>

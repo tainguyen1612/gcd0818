@@ -30,7 +30,7 @@ if (empty(getenv("DATABASE_URL"))){
 
 $sql = "DELETE student WHERE ID = SV02";
 //$stmt = $pdo->prepare($sql);
-if($stmt->query($sql) == TRUE){
+if($pdo->query($sql) == TRUE){
     echo "Record deleted successfully";
 } else {
     echo "Error deleting record: " . $stmt->error;
