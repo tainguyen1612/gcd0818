@@ -20,9 +20,13 @@ if (empty(getenv("DATABASE_URL"))){
      echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
    //        "host=ec2-174-129-240-67.compute-1.amazonaws.com;port=5432;user=wrflrxtavasvqh;password=fbfef36049fbd28f1200e3a775a389e014838e86522765e67782f9cf7a3f516b;dbname=d3mmhribgmc6bf",
+   $options = array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+);
    $pdo = new PDO(
 
-        'pgsql:host = ec2-174-129-240-67.compute-1.amazonaws.com',//host
+        'host = ec2-174-129-240-67.compute-1.amazonaws.com',//host
         'dbname = d3mmhribgmc6bf',//name
         'port = 5432',//port
         'user = wrflrxtavasvqh',//user
