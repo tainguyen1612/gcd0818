@@ -38,12 +38,12 @@ if (empty(getenv("DATABASE_URL"))){
 //$stmt->execute();
 $sql = "INSERT INTO student (ID, name, email, class) 
     values('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
-$stmt = $pdo->prepare($sql);
+$stmt = $db->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
     echo "Record inserted successfully";
 } else {
-    echo "Error inderting record: ";
+    echo "Error inserting record: ";
 }
 ?>
 </body>
