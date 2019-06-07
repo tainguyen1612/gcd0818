@@ -28,12 +28,26 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "UPDATE student SET name = 'Lee' WHERE ID = SV02";
-if($pdo->query($sql) == TRUE){
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $pdo->error;
-}
+$sql = 'UPDATE student '
+                . 'SET name = :name, '
+                . 'WHERE ID = :id';
+ 
+        $stmt = $pdo->prepare($sql);
+ 
+        // bind values to the statement
+        $stmt->bindValue(':name', 'Lee');
+        $stmt->bindValue(':id', 'SV02');
+        // update data in the database
+        $stmt->execute();
+ 
+        // return the number of row affected
+        //return $stmt->rowCount();
+//$sql = "UPDATE student SET name = 'Lee' WHERE ID = SV02";
+//if($pdo->query($sql) == TRUE){
+//    echo "Record updated successfully";
+//} else {
+//    echo "Error updating record: " . $pdo->error;
+//}
     
 ?>
 </body>
