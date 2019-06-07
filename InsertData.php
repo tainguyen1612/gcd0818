@@ -39,8 +39,8 @@ if($pdo === false){
 //$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
-//$sql = "INSERT INTO student (ID, name, email, class) VALUES('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
-$sql = "SELECT * FROM student";
+$sql = "INSERT INTO student (ID, name, email, class) VALUES('SV03', 'HoHongLinh','Linhhh@fpt.edu.vn','GCD018')";
+//$sql = "SELECT * FROM student";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){

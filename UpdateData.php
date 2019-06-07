@@ -6,7 +6,7 @@
 
 <?php
 ini_set('display_errors', 1);
-echo "Insert database!";
+echo "Update database!";
 ?>
 
 <?php
@@ -43,11 +43,11 @@ $sql = 'UPDATE student '
         // return the number of row affected
         //return $stmt->rowCount();
 //$sql = "UPDATE student SET name = 'Lee' WHERE ID = SV02";
-//if($pdo->query($sql) == TRUE){
-//    echo "Record updated successfully";
-//} else {
-//    echo "Error updating record: " . $pdo->error;
-//}
+if($stmt->execute() == TRUE){
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record ";
+}
     
 ?>
 </body>
