@@ -37,7 +37,7 @@ if (empty(getenv("DATABASE_URL"))){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 $sql = "INSERT INTO student (ID, name, email, class) 
-    values ('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
+    values('SV03', 'Ho Hong Linh','Linhhh@fpt.edu.vn','GCD018')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
