@@ -28,6 +28,9 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
+if($pdo === false){
+     echo "ERROR: Could not connect Database";
+}
 //Khởi tạo Prepared Statement
 //$stmt = $db->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
 
