@@ -57,12 +57,17 @@ $sql = "INSERT INTO student(stuid, fname, email, classname)"
         . " VALUES('$_POST[StudentID]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
-
-if($stmt->execute() == TRUE){
-    echo "Record inserted successfully.";
-} else {
-    echo "Error inserting record: ";
-}
+ if (is_null($_POST[StudentID])) {
+   echo "StudentID must be not null";
+ }
+ else
+ {
+    if($stmt->execute() == TRUE){
+        echo "Record inserted successfully.";
+    } else {
+        echo "Error inserting record: ";
+    }
+ }
 ?>
 </body>
 </html>
