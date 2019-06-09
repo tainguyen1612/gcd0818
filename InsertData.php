@@ -57,11 +57,12 @@ $sql = "INSERT INTO student(stuid, fname, email, classname)"
         . " VALUES('$_POST[StudentID]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
-if($stmt->execute() == TRUE){
-    echo "Record inserted successfully.";
-} else {
-    echo "Error inserting record: ";
-}
+$result = pg_query($sql); 
+//if($stmt->execute() == TRUE){
+//    echo "Record inserted successfully.";
+//} else {
+//    echo "Error inserting record: ";
+//}
 ?>
 </body>
 </html>
