@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
+    <head>
+<title>Insert data to PostgreSQL with php - creating a simple web application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+li {
+list-style: none;
+}
+</style>
+</head>
 <body>
-
 <h1>INSERT DATA TO DATABASE</h1>
+<ul>
+<form name="insertData" action="insertData.php" method="POST" >
+<li>Student ID ID:</li><li><input type="text" name="StudentID" /></li>
+<li>Full Name:</li><li><input type="text" name="fname" /></li>
+<li>Email:</li><li><input type="text" name="email" /></li>
+<li>Class:</li><li><input type="text" name="classname" /></li>
+<li><input type="submit" /></li>
+</form>
+</ul>
 
 <?php
-ini_set('display_errors', 1);
-echo "Insert database!";
-?>
-
-<?php
-
 
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
@@ -40,7 +51,9 @@ if($pdo === false){
 //$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
-$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
+//$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
+$sql = "INSERT INTO student(stuid, fname, email, classname)"
+        . " VALUES('$_POST[StudentId]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
