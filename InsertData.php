@@ -31,12 +31,9 @@ if (empty(getenv("DATABASE_URL"))){
 if($pdo === false){
      echo "ERROR: Could not connect Database";
 }
-else
-{
-     echo "Connect Database successfully.";
-}
+
 //Khởi tạo Prepared Statement
-//$stmt = $pdo->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, :class)');
+//$stmt = $pdo->prepare('INSERT INTO student (stuid, fname, email, classname) values (:id, :name, :email, :class)');
 
 //$stmt->bindParam(':id','SV03');
 //$stmt->bindParam(':name','Ho Hong Linh');
@@ -44,13 +41,12 @@ else
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 $sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV04', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-//$sql = "SELECT * FROM student";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
-    echo "Record inserted successfully";
+    echo "Record inserted successfully.";
 } else {
-    echo "Error inserting record: ";
+    echo "Error inserting record: ". $pdo->error;
 }
 ?>
 </body>

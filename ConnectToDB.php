@@ -37,13 +37,13 @@ $stmt->execute();
 $resultSet = $stmt->fetchAll();
 echo '<p>Students information:</p>';
 foreach ($resultSet as $row) {
-	echo $row['ID'];
+	echo $row['stuid'];
         echo "    ";
-        echo $row['name'];
+        echo $row['fname'];
         echo "    ";
         echo $row['email'];
         echo "    ";
-        echo $row['class'];
+        echo $row['classname'];
         echo "<br/>";
 }
 
