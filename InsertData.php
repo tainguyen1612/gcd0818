@@ -43,7 +43,7 @@ else
 //$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
-$sql = "INSERT INTO student(ID, name, email, class) VALUES('SV03', 'HoHongLinh','Linhhh@fpt.edu.vn','GCD018')";
+$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV04', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 //$sql = "SELECT * FROM student";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
