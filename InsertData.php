@@ -31,17 +31,21 @@ if (empty(getenv("DATABASE_URL"))){
 if($pdo === false){
      echo "ERROR: Could not connect Database";
 }
+else
+{
+     echo "Connect Database successfully.";
+}
 //Khởi tạo Prepared Statement
-//$stmt = $db->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
+$stmt = $pdo->prepare('INSERT INTO student (ID, name, email, class) values (:id, :name, :email, : class)');
 
-//$stmt->bindParam(':ID','SV03');
-//$stmt->bindParam(':name','Ho Hong Linh');
-//$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
-//$stmt->bindParam(':class', 'GCD018');
+$stmt->bindParam(':ID','SV03');
+$stmt->bindParam(':name','Ho Hong Linh');
+$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
+$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
-$sql = "INSERT INTO student (ID, name, email, class) VALUES('SV03', 'HoHongLinh','Linhhh@fpt.edu.vn','GCD018')";
+//$sql = "INSERT INTO student (ID, name, email, class) VALUES('SV03', 'HoHongLinh','Linhhh@fpt.edu.vn','GCD018')";
 //$sql = "SELECT * FROM student";
-$stmt = $pdo->prepare($sql);
+//$stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
     echo "Record inserted successfully";
