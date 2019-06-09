@@ -13,7 +13,7 @@ list-style: none;
 <h1>INSERT DATA TO DATABASE</h1>
 <ul>
     <form name="InsertData" action="InsertData.php" method="POST" >
-<li>Student ID ID:</li><li><input type="text" name="StudentID" /></li>
+<li>Student ID:</li><li><input type="text" name="StudentID" /></li>
 <li>Full Name:</li><li><input type="text" name="fname" /></li>
 <li>Email:</li><li><input type="text" name="email" /></li>
 <li>Class:</li><li><input type="text" name="classname" /></li>
@@ -53,7 +53,7 @@ if($pdo === false){
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO student(stuid, fname, email, classname)"
-        . " VALUES('$_POST[StudentId]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
+        . " VALUES('$_POST[StudentID]','$_POST[fname]','$_POST[email]','$_POST[classname]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
