@@ -46,7 +46,7 @@ $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
     echo "Record inserted successfully.";
 } else {
-    echo "Error inserting record: ". $pdo->error;
+    echo "Error inserting record: ";
 }
 ?>
 </body>

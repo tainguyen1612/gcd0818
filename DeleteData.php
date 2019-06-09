@@ -28,12 +28,12 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "DELETE student WHERE stuid = 'SV02'";
+$sql = "DELETE FROM student WHERE stuid = 'SV02'";
 $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
     echo "Record deleted successfully.";
 } else {
-    echo "Error deleting record: " . $pdo->error;
+    echo "Error deleting record: ";
 }
 
 ?>

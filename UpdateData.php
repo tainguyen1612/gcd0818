@@ -46,7 +46,7 @@ $sql = "UPDATE student SET fname = 'Lee Chan Do' WHERE stuid = 'SV02'";
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
 } else {
-    echo "Error updating record. ". $pdo->error;
+    echo "Error updating record. ";
 }
     
 ?>
