@@ -7,10 +7,10 @@
  
  ?> 
      <h1>Hello World </h1>
-     <h2>This is Cloud Computing class</h2>
-     <a href="https://vnexpress.net/" target="_black" >VnExpress Page</a>
-     <br/>
-     <a href="https://www.24h.com.vn/" target="_black" >24h Page</a>
+     <h2>Name : Nguyen Ngoc Tai</h2>
+     <h2>Class : GCD0818</h2>
+     <h2>ID : GCD17114</h2>
+     <a href="https://cms.greenwich.edu.vn/" target="_black" >CMS Greenwich</a>
      <br/>
      <a href="ConnectToDB.php" target="_blank" >Connect database</a>
      <br/>
