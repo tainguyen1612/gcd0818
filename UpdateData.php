@@ -58,7 +58,9 @@ $sql = "UPDATE student SET fname = ? , email = ? , classname = ? WHERE stuid = ?
 	$stmt->bindParam(2,$_POST['email']);
 	$stmt->bindParam(3,$_POST['classname']);
 	$stmt->bindParam(4,$_POST['stuid']);
-if($stmt->execute() == TRUE){
+        $stmt->execute();
+        $stmt->closeCursor();
+if($stmt->execute() == FALSE){
     echo "Record updated successfully.";
 } else {
     echo "Error updating record. ";
