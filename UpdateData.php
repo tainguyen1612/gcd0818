@@ -52,10 +52,10 @@ if (empty(getenv("DATABASE_URL"))){
         // return the number of row affected
         //return $stmt->rowCount();
 
-$sql = "UPDATE student SET fname = ':fname' , email = ':email' , classname = ':classname' WHERE stuid = ':stuid'";
+$sql = "UPDATE student SET fname = :fname , email = :email , classname = :classname WHERE stuid = :stuid";
       $stmt = $pdo->prepare($sql);
       $stmt->execute();
-      return $stmt->rowCount();
+
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
 } else {
