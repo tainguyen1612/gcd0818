@@ -54,7 +54,12 @@ if (empty(getenv("DATABASE_URL"))){
 
 $sql = "UPDATE student SET fname = ':fname' , email = ':email' , classname = ':classname' WHERE stuid = ':stuid'";
       $stmt = $pdo->prepare($sql);
+      $stmt->bindValue(':name', '$_POST[fname]');
+      $stmt->bindValue(':email', '$_POST[email]');
+      $stmt->bindValue(':classname', '$_POST[classname]');
+      $stmt->bindValue(':stuid', '$_POST[stuid]');
       $stmt->execute();
+      return $stmt->rowCount();
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
 } else {
