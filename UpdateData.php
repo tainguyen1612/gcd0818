@@ -14,10 +14,7 @@
 <li><input type="submit" /></li>
 </form>
 </ul>
-<?php
-ini_set('display_errors', 1);
-echo "Update database!";
-?>
+
 
 <?php
 
@@ -60,7 +57,7 @@ $sql = "UPDATE student SET fname = ? , email = ? , classname = ? WHERE stuid = ?
 	$stmt->bindParam(4,$_POST['stuid']);
         $stmt->execute();
         $stmt->closeCursor();
-if($stmt->execute() == FALSE){
+if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
 } else {
     echo "Error updating record. ";
