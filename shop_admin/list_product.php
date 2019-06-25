@@ -1,8 +1,3 @@
-<?php 
-  include_once('database.php');
-  include_once('function_category.php');
-  $categories = get_categories();
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +69,7 @@
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Product Operator</span> <span class="label label-important">3</span></a>
       <ul>
         <li><a href="?action=add_new_product">Add New</a></li>
-        <li><a href="?action=list_product">Lít ò product</a></li>
+        <li><a href="?action=list_product">Search</a></li>
         <li><a href="#">Edit</a></li>
       </ul>
     </li>
@@ -103,8 +98,8 @@
 </div>
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Category</a> </div>
-    <h1>Category</h1>
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Product</a> </div>
+    <h1>Product</h1>
   </div>
   <div class="container-fluid">
     <hr>
@@ -112,33 +107,37 @@
       <div class="span12">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-          <a href="?action=add_new_category"><button type="button" class="btn btn-default">Add New</button></a>  
+          <a href="?action=add_new_product"><button type="button" class="btn btn-default">Add New</button></a>  
             <h5>List of category</h5>
           </div>
           <div class="widget-content nopadding">
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
+                  <th>ProductID</th>
+                  <th>productName</th>
                   <th>CategoryID</th>
-                  <th>CategoryName</th>
+                  <th>Price</th>
                   <th>Description</th>
+                  <th>Image</th>
                   <th>Create_at</th>
-                  <th>Update_at</th>
                   <th>By_user</th>
                   <th colspan="2">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($categories as $key => $value): ?>
+                <?php foreach ($product as $key => $value): ?>
                 <tr class="odd gradeX">
+                  <td><?php echo $value['productid'] ?></td>
+                  <td><?php echo $value['productname'] ?></td>
                   <td><?php echo $value['categoryid'] ?></td>
-                  <td><?php echo $value['categoryname'] ?></td>
+                  <td><?php echo $value['price'] ?></td>
                   <td><?php echo $value['description'] ?></td>
+                  <td><img src="img/product/<?php echo $value['image'];?>" alt="" height='70'></td>
                   <td class="center"><?php echo $value['create_at'] ?></td>
-                  <td class="center"><?php echo $value['update_at'] ?></td>
                   <td class="center"><?php echo $value['by_user'] ?></td>
-                  <td class="center"><a href="?action=edit_category&categoryid=<?php echo $value['categoryid'];?>">Edit</a></td>
-                  <td class="center"><a href="?action=delete_category&categoryid=<?php echo $value['categoryid'];?>">Delete</a></td>
+                  <td class="center"><a href="?action=edit_product&productid=<?php echo $value['productid'];?>">Edit</a></td>
+                  <td class="center"><a href="?action=delete_product&productid=<?php echo $value['productid'];?>">Delete</a></td>
                 </tr>
               <?php endforeach; ?>
               </tbody>

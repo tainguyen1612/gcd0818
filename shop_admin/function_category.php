@@ -16,13 +16,13 @@
 	}
 	function add_category($categoryname, $description, $by_user){
 		$db = getDB();// Connect to database
-		$query ="INSERT INTO categoties (categoryname, description, by_user)
-				VALUES (:categoryname,:description,:by_user)";
+		$query ="INSERT INTO categoties(categoryname, description, by_user)
+				VALUES (?,?,?)";
 		try {
 			$statement = $db->prepare($query);
-			$statement->bindParam(':categoryname',$categoryname);
-			$statement->bindParam(':description',$description);
-			$statement->bindParam(':by_user',$by_user);
+			$statement->bindParam(1,$categoryname);
+			$statement->bindParam(2,$description);
+			$statement->bindParam(3,$by_user);
 			$statement->execute();
 			$statement->closeCursor();			
 		} catch (PDOException $e) {
@@ -34,11 +34,11 @@
 	function get_category_by_id($categoryid){
 		$db = getDB();// Connect to database
 		$query ="SELECT * FROM categoties 
-				WHERE categoryid=:categoryid 
+				WHERE categoryid=? 
 				ORDER BY categoryid";
 		try {
 			$statement = $db->prepare($query);
-			$statement->bindParam(':categoryid',$categoryid);
+			$statement->bindParam(1,$categoryid);
 			$statement->execute();
 			$result = $statement->fetch();
 			$statement->closeCursor();
@@ -52,10 +52,10 @@
 	function delete_category_by_id($categoryid){
 		$db = getDB();// Connect to database
 		$query ="DELETE  FROM categoties 
-				WHERE categoryid=:categoryid";
+				WHERE categoryid=?";
 		try {
 			$statement = $db->prepare($query);
-			$statement->bindParam(':categoryid',$categoryid);
+			$statement->bindParam(1,$categoryid);
 			$statement->execute();			
 			$statement->closeCursor();		
 		} catch (PDOException $e) {

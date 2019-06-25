@@ -74,7 +74,7 @@
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Product Operator</span> <span class="label label-important">3</span></a>
       <ul>
         <li><a href="?action=add_new_product">Add New</a></li>
-        <li><a href="?action=list_product">Lít ò product</a></li>
+        <li><a href="?action=list_product">Search</a></li>
         <li><a href="#">Edit</a></li>
       </ul>
     </li>
@@ -111,39 +111,53 @@
     <div class="row-fluid">
       <div class="span12">
         <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-          <a href="?action=add_new_category"><button type="button" class="btn btn-default">Add New</button></a>  
-            <h5>List of category</h5>
-          </div>
           <div class="widget-content nopadding">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>CategoryID</th>
-                  <th>CategoryName</th>
-                  <th>Description</th>
-                  <th>Create_at</th>
-                  <th>Update_at</th>
-                  <th>By_user</th>
-                  <th colspan="2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($categories as $key => $value): ?>
-                <tr class="odd gradeX">
-                  <td><?php echo $value['categoryid'] ?></td>
-                  <td><?php echo $value['categoryname'] ?></td>
-                  <td><?php echo $value['description'] ?></td>
-                  <td class="center"><?php echo $value['create_at'] ?></td>
-                  <td class="center"><?php echo $value['update_at'] ?></td>
-                  <td class="center"><?php echo $value['by_user'] ?></td>
-                  <td class="center"><a href="?action=edit_category&categoryid=<?php echo $value['categoryid'];?>">Edit</a></td>
-                  <td class="center"><a href="?action=delete_category&categoryid=<?php echo $value['categoryid'];?>">Delete</a></td>
-                </tr>
-              <?php endforeach; ?>
-              </tbody>
-            </table>
-          </div>
+          <form action="" method="POST" class="form-horizontal" enctype="multipart/form-data" >
+            <div class="control-group">
+              <label class="control-label">Product Name :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="Productname" name="productname" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Category :</label>
+              <div class="controls">
+                <select name="categoryid" id="inputcategoryid" class="form-control" required="required">
+                  <?php foreach ($categories as $key => $value):?>
+                  <option value="<?php echo $value['categoryid']; ?>"><?php echo $value['categoryname']; ?></option>
+                <?php endforeach; ?>
+                </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Price :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="Price" name="price" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Description</label>
+              <div class="controls">
+                <textarea name="description" class="span11" ></textarea>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Image :</label>
+              <div class="controls">
+                <input type="file" name="file_image" class="span11" placeholder="Image"  />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">By User :</label>
+              <div class="controls">
+                <input name="by_user" type="text" class="span11" placeholder="Company name" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button name="action" value="save_new_product" type="submit" class="btn btn-success">Save</button>
+            </div>
+          </form>
+        </div>
         </div>
       </div>
     </div>
